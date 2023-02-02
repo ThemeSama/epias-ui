@@ -1,0 +1,47 @@
+.epies-split-container {
+  display: flex;
+  width: 100vw;
+  height: calc(100vh - $header-height);
+  flex-direction: column;
+}
+
+.split {
+  display: flex;
+  flex-direction: row;
+
+  @include media-breakpoint-down(lg) {
+    display: block;
+    height: auto !important;
+  }
+}
+
+.gutter {
+  background-color: #eee;
+  background-repeat: no-repeat;
+  background-position: 50%;
+
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+
+  &.gutter-horizontal {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+    cursor: col-resize;
+  }
+
+  &.gutter-vertical {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
+    cursor: row-resize;
+  }
+}
+
+.epias-lorem-ipsum,
+.epias-split-info,
+.epias-contract-form,
+.epias-contract-list {
+  overflow: auto;
+
+  @include media-breakpoint-down(lg) {
+    width: 100% !important;
+  }
+}

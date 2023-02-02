@@ -1,0 +1,13 @@
+.epias {
+
+  &-header {
+    background: $header-bg;
+    color: $white;
+    height: $header-height;
+    padding: 1rem;
+  }
+
+  &-logo {
+    max-height: 100%;
+  }
+}

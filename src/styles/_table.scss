@@ -1,0 +1,17 @@
+.epias-datatable-actions-container {
+  display: flex;
+}
+
+.epias-datatable-actions {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+}
+
+.epias-dropdown {
+  position: relative;
+
+  .dropdown-menu {
+    right: 0;
+  }
+}
