@@ -1,5 +1,14 @@
 import { useCallback } from 'react';
 
+/**
+ * Tablonun filtreleme sürecini yönetir
+ * @component
+ * 
+ * @param {Set} options - Filtreleme yapılacak değerler
+ * @param {Function} filterList - Listeyi güncelleyen method
+ * 
+ * @since 1.0
+ */
 const Filter = ({options, filterList}) => {
   const filter = useCallback((e) => {
     filterList(e.target.value);

@@ -1,3 +1,12 @@
+/**
+ * Tablonun gövdesini yazdırır
+ * @component
+ * 
+ * @param {Array} list - Listenin kendisi
+ * @param {Array} columns - Listenin ana sütunları
+ * 
+ * @since 1.0
+ */
 const List = ({list, columns}) => {
   return <tbody>
     {list.map((listItem) => 
