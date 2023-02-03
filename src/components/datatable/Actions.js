@@ -1,6 +1,15 @@
 import { useCallback, useRef } from 'react';
 import Icon from '../Icon';
 
+/**
+ * Tablonun aksiyon listesini yönetir. İşlevsel olarak sütunları gizleyip gösterme kısmı yazılmıştır.
+ * @component
+ * 
+ * @param {Array} columns - Tablo ana sütun listesi
+ * @param {Function} toggleColumn - Sütun listesini açıp kapatan method
+ * 
+ * @since 1.0
+ */
 const Actions = ({columns, toggleColumn}) => {
   const dropdownMenu = useRef();
 

@@ -2,6 +2,15 @@ import { useEffect, useState } from 'react';
 import Head from './datatable/Head';
 import List from './datatable/List';
 
+/**
+ * Tablo ile veri listelemeyi sağlar
+ * @component
+ * 
+ * @param {Array} columns - Listenin ana sütunları
+ * @param {Array} list - Listenin kendisi
+ * 
+ * @since 1.0
+ */
 const DataTable = ({columns, list}) => {
 
   const [tableColumns, setTableColumns] = useState([]);
