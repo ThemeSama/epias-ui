@@ -1,7 +1,7 @@
 import Header from './views/Header';
 import Split from 'react-split';
 import './styles/epias.scss';
-import { useCallback } from 'react';
+import { useCallback, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSize } from './redux/actions';
 import Contracts from './views/Contracts';
@@ -13,6 +13,8 @@ const Epias = () => {
 
   const sizesState = useSelector((state) => state.sizes);
   const dispatch = useDispatch();
+
+  const contractList = useRef();
 
   const setSplitSizes = useCallback((split) => (sizes) => {
     dispatch(setSize({split, sizes}));
@@ -33,7 +35,7 @@ const Epias = () => {
         minSize={400}
         onDragEnd={setSplitSizes('vt')}
       >
-        <Contracts />
+        <Contracts ref={contractList} />
         <SplitInfo />
       </Split>
       <Split 
@@ -42,7 +44,7 @@ const Epias = () => {
         minSize={400}
         onDragEnd={setSplitSizes('vb')}
       >
-        <ContractForm />
+        <ContractForm contractList={contractList} />
         <LoremIpsum />
       </Split>
     </Split>

@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState } from 'react';
 import { saveContract } from '../services/contracts-service';
 
-const ContractForm = () => {
+const ContractForm = ({contractList}) => {
   const contractForm = useRef();
   const [contract, setContract] = useState({});
   const [newContractList, setNewContractList] = useState([]);
@@ -20,7 +20,10 @@ const ContractForm = () => {
 
       return newList;
     });
-  }, [contract]);
+
+    // başka seviyedeki datatable yeni verileri getirsin diye ekledim
+    contractList.current.updateTable();
+  }, [contract, contractList]);
 
   const changeContract = useCallback((prop) => (event) => {
     setContract((prevContract) => {
