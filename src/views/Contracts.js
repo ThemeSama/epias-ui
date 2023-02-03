@@ -1,10 +1,10 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, forwardRef, useImperativeHandle } from 'react';
 import DataTable from '../components/DataTable';
 import Actions from '../components/datatable/Actions';
 import Filter from '../components/datatable/Filter';
 import { getContracts } from '../services/contracts-service';
 
-const Contracts = () => {
+const Contracts = forwardRef(({children}, ref) => {
   const [list, setList] = useState([]);
   const [filterOptions, setFilterOptions] = useState([]);
   const [tableColumns, setTableColumns] = useState([
@@ -29,6 +29,13 @@ const Contracts = () => {
       visible: true
     }
   ]);
+
+  // üst bileşenden erişim için bazı detayları paylaş
+  useImperativeHandle(ref, () => ({
+    updateTable: () => {
+      getList();
+    }
+  }));
 
   const getList = useCallback(async (contract) => {
     const list = await getContracts(contract);
@@ -62,6 +69,6 @@ const Contracts = () => {
     </div>
     <DataTable list={list} columns={tableColumns} />
   </div>;
-}
+})
 
 export default Contracts;
