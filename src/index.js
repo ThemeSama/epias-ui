@@ -13,9 +13,9 @@ store.subscribe(() => {
 });
 
 // fake server
-if (process.env.NODE_ENV === 'development') {
+//if (process.env.NODE_ENV === 'development') {
   contractsServer();
-}
+//}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
